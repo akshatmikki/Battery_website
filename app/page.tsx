@@ -10,7 +10,7 @@ export default function Home() {
       
       {/* Hero Section */}
       <section className="relative w-full pt-16">
-        <div className="relative h-[400px] sm:h-[450px] md:h-[500px] lg:h-[600px]">
+        <div className="relative h-[85vh] sm:h-[80vh] md:h-[85vh] lg:h-[90vh] min-h-[600px] max-h-[900px]">
           <Image
             src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1263a64d160c97666bc23d23e6c1c65383ced5fa-XQvsb7Bi8QVproalHsfwHaygSGRgWE.png"
             alt="Electric auto-rickshaw and smart battery swap station"
@@ -18,28 +18,31 @@ export default function Home() {
             className="object-cover object-center"
             priority
           />
+          {/* Dark gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/60 to-transparent" />
+          
           {/* Content overlay at bottom */}
-          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-white via-white/95 to-transparent pt-16 pb-6 px-4 sm:px-6 lg:px-8">
+          <div className="absolute bottom-0 left-0 right-0 pb-8 sm:pb-12 lg:pb-16 px-4 sm:px-6 lg:px-8">
             <div className="max-w-7xl mx-auto">
               <div className="max-w-xl lg:max-w-2xl">
-                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-1 leading-tight">
-                  <span className="text-green-600">POWERING</span>
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-1 leading-tight">
+                  <span className="text-amber-400">POWERING</span>
                 </h1>
-                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-2">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-2">
                   THE NEW INDIA
                 </h2>
-                <p className="text-sm sm:text-base text-black mb-2">
-                  WITH <span className="text-green-600 font-semibold">SMART VEHICLE LEASING</span>.
+                <p className="text-sm sm:text-base lg:text-lg text-white mb-3 font-medium">
+                  WITH <span className="text-green-500 font-semibold">SMART VEHICLE LEASING</span>.
                 </p>
-                <p className="text-xs sm:text-sm text-gray-600 mb-4 lg:mb-6">
-                  Zero upfront cost for drivers.<br className="sm:hidden" />
+                <p className="text-sm sm:text-base text-gray-300 mb-6 lg:mb-8 leading-relaxed">
+                  Zero upfront cost for drivers.<br />
                   Instant financing and IoT-backed security for dealers.
                 </p>
-                <div className="flex flex-wrap gap-3">
-                  <Link href="/dealers" className="bg-green-600 hover:bg-green-700 text-white px-4 sm:px-6 py-2.5 rounded text-xs sm:text-sm font-semibold transition-colors">
+                <div className="flex flex-wrap gap-3 sm:gap-4">
+                  <Link href="/dealers" className="bg-green-600 hover:bg-green-700 text-white px-5 sm:px-8 py-3 rounded text-sm sm:text-base font-bold transition-colors">
                     BECOME A DEALER
                   </Link>
-                  <button className="border-2 border-green-600 text-green-600 hover:bg-green-50 px-4 sm:px-6 py-2.5 rounded text-xs sm:text-sm font-semibold transition-colors">
+                  <button className="border-2 border-green-600 text-green-500 hover:bg-green-600/10 px-5 sm:px-8 py-3 rounded text-sm sm:text-base font-bold transition-colors">
                     LOCATE OUR STORE
                   </button>
                 </div>
