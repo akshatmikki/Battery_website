@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Navigation from '@/components/Navigation'
 import { MapPin, Phone, Mail, Linkedin, Instagram, Youtube } from 'lucide-react'
 import Link from 'next/link'
+import BharatLogo from '@/components/BharatLogo'
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -120,15 +121,7 @@ export default function Contact() {
           <div className="flex items-center justify-between mb-4 md:mb-6">
             {/* Logo */}
             <Link href="/" className="flex items-center">
-              <div className="w-8 h-8 md:w-10 md:h-10 border-2 border-green-600 rounded-full flex items-center justify-center mr-1">
-                <span className="text-green-600 font-bold text-sm md:text-base">B</span>
-              </div>
-              <span className="text-xl md:text-2xl font-bold">
-                <span className="text-black">ha</span>
-                <span className="text-green-600 font-serif italic">R</span>
-                <span className="text-black">at</span>
-              </span>
-              <span className="text-[8px] md:text-[10px] text-orange-500 ml-0.5 -mt-2">green volt</span>
+               <BharatLogo height={32} />
             </Link>
 
             {/* Social Icons */}
