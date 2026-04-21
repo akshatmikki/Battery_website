@@ -13,7 +13,7 @@ export default function Drivers() {
           {/* Hero Image */}
           <div className="relative w-full h-[300px] sm:h-[400px] md:h-[450px] lg:h-[500px]">
             <Image
-              src="/images/electric-auto-rickshaw.jpg"
+              src="/images/auto.jpg"
               alt="Blue electric auto-rickshaw"
               fill
               className="object-cover object-center"
@@ -24,7 +24,7 @@ export default function Drivers() {
           {/* Text Overlay at Bottom */}
           <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent py-6 sm:py-8 px-4">
             <div className="max-w-7xl mx-auto">
-              <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-tight">
+              <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-black leading-tight">
                 DRIVE 150+ KMS A DAY.
                 <br />
                 DOUBLE YOUR INCOME.
@@ -42,7 +42,7 @@ export default function Drivers() {
           <div className="max-w-xl lg:max-w-3xl mx-auto">
             <div className="grid grid-cols-2 gap-4 lg:gap-8">
               {/* Lead-Acid Column */}
-              <div className="bg-gray-100 rounded-lg p-4 sm:p-6 lg:p-8">
+              <div className="bg-[#E2E2E2] rounded-lg p-4 sm:p-6 lg:p-8">
                 <h3 className="text-sm sm:text-base lg:text-lg font-bold text-black text-center mb-4 lg:mb-6 pb-3 lg:pb-4 border-b border-gray-300">
                   Lead-Acid
                   <br />
@@ -58,7 +58,7 @@ export default function Drivers() {
               </div>
               
               {/* Bharat Green Volt Column */}
-              <div className="bg-green-600 rounded-lg p-4 sm:p-6 lg:p-8">
+              <div className="bg-[#1F6500] rounded-lg p-4 sm:p-6 lg:p-8">
                 <h3 className="text-sm sm:text-base lg:text-lg font-bold text-white text-center mb-4 lg:mb-6 pb-3 lg:pb-4 border-b border-green-500">
                   Bharat Green Volt
                   <br />
@@ -78,42 +78,56 @@ export default function Drivers() {
       </section>
 
       {/* Empowering Drivers Section */}
-      <section className="py-8 sm:py-12 lg:py-16 bg-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-black text-center">EMPOWERING DRIVERS</h2>
-          <p className="text-xs sm:text-sm lg:text-base text-gray-600 text-center mb-6 sm:mb-8 lg:mb-10">WITH SAFETY, SECURITY & HIGHER EARNINGS</p>
+      {/* Empowering Drivers Section */}
+<section className="py-10 sm:py-12 lg:py-16 bg-white">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-black text-center">
+      EMPOWERING DRIVERS
+    </h2>
+
+    <p className="text-xs sm:text-sm lg:text-base text-gray-600 text-center mb-8 lg:mb-12">
+      WITH SAFETY, SECURITY & HIGHER EARNINGS
+    </p>
+
+    {/* Card */}
+    <div className="max-w-md mx-auto lg:max-w-3xl">
+      
+      <div className="bg-[#899C81] rounded-xl shadow-md overflow-hidden">
+        
+        <div className="flex flex-col sm:flex-row items-center sm:items-start">
           
-          {/* Driver Testimonial Card */}
-          <div className="max-w-md mx-auto lg:max-w-2xl xl:max-w-3xl">
-            <div className="bg-white rounded-lg shadow-md overflow-hidden">
-              <div className="flex flex-col sm:flex-row">
-                {/* Driver Image */}
-                <div className="relative w-full sm:w-40 md:w-48 lg:w-56 h-48 sm:h-auto flex-shrink-0">
-                  <Image
-                    src="/images/driver-aayush.jpg"
-                    alt="Aayush, Driver"
-                    fill
-                    className="object-cover"
-                  />
-                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-3 sm:hidden">
-                    <p className="text-white text-sm font-semibold">Aayush, Driver</p>
-                  </div>
-                </div>
-                
-                {/* Content */}
-                <div className="p-4 sm:p-6 lg:p-8 flex flex-col justify-between">
-                  <p className="text-xs sm:text-sm lg:text-base text-gray-700 leading-relaxed mb-4">
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                    Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s, 
-                    when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                  </p>
-                  <p className="text-sm lg:text-base font-semibold text-black hidden sm:block">Aayush, Driver</p>
-                </div>
-              </div>
-            </div>
+          {/* Image */}
+          <div className="relative w-32 h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48 m-4 sm:m-6 flex-shrink-0">
+            <Image
+              src="/images/ayush-driver.png"
+              alt="Aayush, Driver"
+              fill
+              className="object-cover rounded-lg"
+            />
+          </div>
+
+          {/* Content */}
+          <div className="px-4 pb-6 sm:px-0 sm:py-6 lg:py-8 text-center sm:text-left">
+            
+            <p className="text-xs sm:text-sm lg:text-base text-white leading-relaxed mb-4">
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+              Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s,
+              when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+            </p>
+
+            <p className="text-sm lg:text-base font-semibold text-white">
+              Aayush, Driver
+            </p>
+
           </div>
         </div>
-      </section>
+
+      </div>
+
+    </div>
+  </div>
+</section>
 
       {/* Female Driver with Phone Section */}
       <section className="relative">

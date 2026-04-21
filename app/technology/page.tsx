@@ -68,18 +68,18 @@ export default function Technology() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="pt-20 md:pt-24 lg:pt-28">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<section className="pt-20 md:pt-24 lg:pt-28 pb-6 md:pb-8 lg:pb-10">        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Desktop: Side by side layout */}
           <div className="lg:flex lg:items-center lg:gap-12">
             <div className="lg:w-1/2">
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-black mb-1 leading-tight">
-                THE INTELLIGENCE
-              </h1>
-              <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-black mb-6 lg:mb-0 leading-tight">
-                BEHIND THE ENERGY.
-              </p>
-            </div>
+  <h1 className="text-[28px] sm:text-[32px] md:text-[34px] lg:text-[37px] font-bold text-black leading-[100%] tracking-[0%]">
+    THE INTELLIGENCE
+  </h1>
+
+  <h2 className="text-[28px] sm:text-[32px] md:text-[34px] lg:text-[37px] font-bold text-black leading-[100%] tracking-[0%] mt-1">
+    BEHIND THE ENERGY.
+  </h2>
+</div>
             
             {/* Hero Image - Full Width on mobile, half on desktop */}
             <div className="lg:w-1/2">
@@ -98,50 +98,74 @@ export default function Technology() {
       </section>
 
       {/* Technology Cards Section */}
-      <section className="py-12 md:py-16 lg:py-20 bg-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto">
-            {/* Finance Engine Card */}
-            <div className="bg-white rounded-lg p-6 md:p-8 lg:p-10 text-center shadow-sm hover:shadow-md transition-shadow sm:col-span-2 lg:col-span-1">
-              <div className="flex justify-center mb-4 lg:mb-6">
-                <FinanceEngineIcon />
-              </div>
-              <h3 className="font-bold text-sm md:text-base lg:text-lg text-black mb-3 lg:mb-4">
-                THE FINANCE ENGINE (LMS)
-              </h3>
-              <p className="text-xs md:text-sm lg:text-base text-gray-600 leading-relaxed">
-                Digital onboarding, CIBIL checks, automated e-NACH/UPI collections, and dealer ledger.
-              </p>
-            </div>
-
-            {/* Asset Engine Card */}
-            <div className="bg-white rounded-lg p-6 md:p-8 lg:p-10 text-center shadow-sm hover:shadow-md transition-shadow">
-              <div className="flex justify-center mb-4 lg:mb-6">
-                <IoTEngineIcon />
-              </div>
-              <h3 className="font-bold text-sm md:text-base lg:text-lg text-black mb-3 lg:mb-4">
-                THE ASSET ENGINE (IoT)
-              </h3>
-              <p className="text-xs md:text-sm lg:text-base text-gray-600 leading-relaxed">
-                Deep CAN-bus telemetry, real-time State of Charge (SoC), thermal alerts, and Geo-fencing.
-              </p>
-            </div>
-
-            {/* Remote Kill-Switch Card */}
-            <div className="bg-white rounded-lg p-6 md:p-8 lg:p-10 text-center shadow-sm hover:shadow-md transition-shadow">
-              <div className="flex justify-center mb-4 lg:mb-6">
-                <KillSwitchIcon />
-              </div>
-              <h3 className="font-bold text-sm md:text-base lg:text-lg text-black mb-3 lg:mb-4">
-                THE REMOTE KILL-SWITCH
-              </h3>
-              <p className="text-xs md:text-sm lg:text-base text-gray-600 leading-relaxed">
-                Explaining the security protocol. &quot;If a lease defaults, the battery safely immobilizes via over-the-air commands.&quot;
-              </p>
-            </div>
-          </div>
+     <section className="py-12 md:py-16 lg:py-20 bg-[#1F6500]">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto">
+      
+      {/* Finance Engine Card */}
+      <div className="bg-white rounded-lg p-6 md:p-8 lg:p-10 text-center shadow-sm hover:shadow-md transition-shadow sm:col-span-2 lg:col-span-1">
+        
+        <div className="flex justify-center mb-4 lg:mb-6">
+          <img
+            src="/images/engineering.png"
+            alt="Finance Engine"
+            className="w-14 h-14 sm:w-16 sm:h-16 object-contain"
+          />
         </div>
-      </section>
+
+        <h3 className="font-bold text-sm md:text-base lg:text-lg text-black mb-3 lg:mb-4">
+          THE FINANCE ENGINE (LMS)
+        </h3>
+
+        <p className="text-xs md:text-sm lg:text-base text-gray-600 leading-relaxed">
+          Digital onboarding, CIBIL checks, automated e-NACH/UPI collections, and dealer ledger.
+        </p>
+      </div>
+
+      {/* Asset Engine Card */}
+      <div className="bg-white rounded-lg p-6 md:p-8 lg:p-10 text-center shadow-sm hover:shadow-md transition-shadow">
+        
+        <div className="flex justify-center mb-4 lg:mb-6">
+          <img
+            src="/images/technology.png"
+            alt="Asset Engine"
+            className="w-14 h-14 sm:w-16 sm:h-16 object-contain"
+          />
+        </div>
+
+        <h3 className="font-bold text-sm md:text-base lg:text-lg text-black mb-3 lg:mb-4">
+          THE ASSET ENGINE (IoT)
+        </h3>
+
+        <p className="text-xs md:text-sm lg:text-base text-gray-600 leading-relaxed">
+          Deep CAN-bus telemetry, real-time State of Charge (SoC), thermal alerts, and Geo-fencing.
+        </p>
+      </div>
+
+      {/* Remote Kill-Switch Card */}
+      <div className="bg-white rounded-lg p-6 md:p-8 lg:p-10 text-center shadow-sm hover:shadow-md transition-shadow">
+        
+        <div className="flex justify-center mb-4 lg:mb-6">
+          <img
+            src="/images/motorcycle.png"
+            alt="Kill Switch"
+            className="w-14 h-14 sm:w-16 sm:h-16 object-contain"
+          />
+        </div>
+
+        <h3 className="font-bold text-sm md:text-base lg:text-lg text-black mb-3 lg:mb-4">
+          THE REMOTE KILL-SWITCH
+        </h3>
+
+        <p className="text-xs md:text-sm lg:text-base text-gray-600 leading-relaxed">
+          Explaining the security protocol. "If a lease defaults, the battery safely immobilizes via over-the-air commands."
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
 
       <Footer />
     </div>

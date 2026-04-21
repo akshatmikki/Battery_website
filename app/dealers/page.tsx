@@ -46,7 +46,7 @@ export default function Dealers() {
       <section className="relative pt-16">
         <div className="relative h-[350px] sm:h-[400px] md:h-[450px] lg:h-[500px]">
           <Image
-            src="/images/dealer-hero.jpg"
+            src="/images/grow-your-business.jpg"
             alt="Grow your business"
             fill
             className="object-cover"
@@ -63,58 +63,95 @@ export default function Dealers() {
           </div>
         </div>
       </section>
-
+<section className="bg-white py-6 sm:py-8">
+  <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-black text-center">
+    BENEFITS
+  </h2>
+</section>
       {/* Benefits Section */}
-      <section className="py-8 sm:py-12 lg:py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-black mb-6 sm:mb-8 lg:mb-12 text-center">BENEFITS</h2>
-          
-          <div className="flex flex-col gap-4 sm:gap-6 max-w-sm sm:max-w-md lg:max-w-4xl mx-auto lg:flex-row lg:justify-center">
-            {/* Zero Inventory Cost Card */}
-            <div className="bg-green-600 rounded-lg p-6 sm:p-8 lg:p-10 text-center lg:flex-1 lg:max-w-xs">
-              <div className="flex justify-center mb-4">
-                <CoinIcon />
-              </div>
-              <h3 className="text-sm sm:text-base lg:text-lg font-bold text-white mb-2">ZERO INVENTORY COST</h3>
-              <p className="text-xs sm:text-sm lg:text-base text-white/90">We supply the smart batteries</p>
-            </div>
-            
-            {/* Instant KYC Card */}
-            <div className="bg-green-600 rounded-lg p-6 sm:p-8 lg:p-10 text-center lg:flex-1 lg:max-w-xs">
-              <div className="flex justify-center mb-4">
-                <DocumentCheckIcon />
-              </div>
-              <h3 className="text-sm sm:text-base lg:text-lg font-bold text-white mb-2">INSTANT KYC & FINANCING</h3>
-              <p className="text-xs sm:text-sm lg:text-base text-white/90">
-                Approve customers in 5 minutes
-                <br />
-                using our Dealer App
-              </p>
-            </div>
-            
-            {/* 100% Asset Security Card */}
-            <div className="bg-green-600 rounded-lg p-6 sm:p-8 lg:p-10 text-center lg:flex-1 lg:max-w-xs">
-              <div className="flex justify-center mb-4">
-                <ShieldLockIcon />
-              </div>
-              <h3 className="text-sm sm:text-base lg:text-lg font-bold text-white mb-2">100% ASSET SECURITY</h3>
-              <p className="text-xs sm:text-sm lg:text-base text-white/90">
-                Our IoT tech tracks the battery
-                <br />
-                and allows remote immobilization if
-                <br />
-                payments fail. You never lose an asset
-              </p>
-            </div>
-          </div>
+{/* Benefits Section */}
+<section className="py-10 sm:py-12 lg:py-16 bg-[#899C81]">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    
+    
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-8 max-w-5xl mx-auto">
+      
+      {/* Card 1 */}
+      <div className="bg-white rounded-xl p-6 sm:p-8 text-center shadow-md hover:shadow-xl transition-all duration-300">
+        
+        <div className="flex justify-center mb-4">
+          <img
+            src="/images/save-money.png"
+            alt="Zero Inventory"
+            className="w-16 h-16 sm:w-20 sm:h-20 object-contain"
+          />
         </div>
-      </section>
+
+        <h3 className="text-sm sm:text-base lg:text-lg font-bold text-black mb-2">
+          ZERO INVENTORY COST
+        </h3>
+
+        <p className="text-xs sm:text-sm lg:text-base text-gray-700">
+          We supply the smart batteries
+        </p>
+      </div>
+
+      {/* Card 2 */}
+      <div className="bg-white rounded-xl p-6 sm:p-8 text-center shadow-md hover:shadow-xl transition-all duration-300">
+        
+        <div className="flex justify-center mb-4">
+          <img
+            src="/images/kyc.png"
+            alt="KYC"
+            className="w-16 h-16 sm:w-20 sm:h-20 object-contain"
+          />
+        </div>
+
+        <h3 className="text-sm sm:text-base lg:text-lg font-bold text-black mb-2">
+          INSTANT KYC & FINANCING
+        </h3>
+
+        <p className="text-xs sm:text-sm lg:text-base text-gray-700">
+          Approve customers in 5 minutes
+          <br />
+          using our Dealer App
+        </p>
+      </div>
+
+      {/* Card 3 */}
+      <div className="bg-white rounded-xl p-6 sm:p-8 text-center shadow-md hover:shadow-xl transition-all duration-300">
+        
+        <div className="flex justify-center mb-4">
+          <img
+            src="/images/cyber-security.png"
+            alt="Security"
+            className="w-16 h-16 sm:w-20 sm:h-20 object-contain"
+          />
+        </div>
+
+        <h3 className="text-sm sm:text-base lg:text-lg font-bold text-black mb-2">
+          100% ASSET SECURITY
+        </h3>
+
+        <p className="text-xs sm:text-sm lg:text-base text-gray-700">
+          Our IoT tech tracks the battery
+          <br />
+          and allows remote immobilization if
+          <br />
+          payments fail. You never lose an asset
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
 
       {/* Dashboard Image Section */}
       <section className="py-0">
         <div className="relative w-full h-[300px] sm:h-[400px] md:h-[450px] lg:h-[500px]">
           <Image
-            src="/images/dealer-dashboard.jpg"
+            src="/images/brain.png"
             alt="Dealer Portal Dashboard"
             fill
             className="object-cover"
@@ -154,7 +191,7 @@ export default function Dealers() {
               <div className="lg:col-span-2">
                 <button
                   type="submit"
-                  className="w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded font-semibold text-sm sm:text-base transition-colors"
+                  className="w-full bg-[#1F6500] hover:bg-green-700 text-white py-3 rounded font-semibold text-sm sm:text-base transition-colors"
                 >
                   Submit
                 </button>

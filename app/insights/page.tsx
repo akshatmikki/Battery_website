@@ -29,7 +29,7 @@ export default function Insights() {
 
       <main className="flex-1 pt-20 pb-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-xl md:text-2xl lg:text-3xl font-bold text-black mb-6 md:mb-8">EV INDUSTRY NEWS</h1>
+          <h1 className="text-xl md:text-2xl lg:text-3xl font-bold text-black mb-6 md:mb-8 text-center">EV INDUSTRY NEWS</h1>
 
           {/* News Cards Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
@@ -95,7 +95,7 @@ export default function Insights() {
 
               <Link 
                 href="/contact"
-                className="inline-block mt-4 bg-green-600 text-white px-6 py-2 rounded text-sm font-semibold hover:bg-green-700 transition-colors"
+                className="inline-block mt-4 bg-[#1F6500] text-white px-6 py-2 rounded text-sm font-semibold hover:bg-green-700 transition-colors"
               >
                 CONTACT US
               </Link>

@@ -29,7 +29,7 @@ export default function Footer() {
             </ul>
             <Link
               href="/contact"
-              className="inline-block mt-4 bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded text-sm font-semibold transition-colors"
+              className="inline-block mt-4 bg-[#1F6500] hover:bg-green-700 text-white px-6 py-2 rounded text-sm font-semibold transition-colors"
             >
               CONTACT US
             </Link>

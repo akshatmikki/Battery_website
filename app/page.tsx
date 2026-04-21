@@ -187,23 +187,38 @@ export default function Home() {
         </div>
       </section>
 
-      {/* The Tech Advantage */}
-      <section className="py-10 sm:py-12 lg:py-16 bg-gray-900 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-lg sm:text-xl lg:text-2xl font-bold mb-8 lg:mb-12 text-center">
+      
+
+      {/* Tech Advantage with Image */}
+<section className="bg-gray-900 text-white">
+  <div className="max-w-7xl mx-auto">
+
+    {/* Image */}
+    <div className="relative w-full h-[250px] sm:h-[350px] md:h-[450px] lg:h-[500px]">
+      <Image
+        src="/images/the-tech-advantage.jpg" //
+        alt="Tech Advantage"
+        fill
+        className="object-cover"
+      />
+
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/60 flex items-center justify-center px-4 text-center">
+        <div>
+          <h2 className="text-lg sm:text-xl lg:text-2xl font-bold mb-4">
             THE TECH ADVANTAGE
           </h2>
-          
-          <div className="max-w-2xl lg:max-w-3xl mx-auto text-center">
-            <p className="text-base sm:text-lg lg:text-xl text-white leading-relaxed">
-              &quot;Powered by our proprietary<br />
-              Two-Brain System:<br />
-              Seamless Finance meets<br />
-              Real-Time IoT Battery Tracking.&quot;
-            </p>
-          </div>
+
+          <p className="text-sm sm:text-base lg:text-xl leading-relaxed max-w-xl mx-auto">
+            "Powered by our proprietary Two-Brain System:
+            Seamless Finance meets Real-Time IoT Battery Tracking."
+          </p>
         </div>
-      </section>
+      </div>
+    </div>
+
+  </div>
+</section>
 
       <Footer />
     </div>

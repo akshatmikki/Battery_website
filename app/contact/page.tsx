@@ -18,142 +18,174 @@ export default function Contact() {
     console.log('Form submitted:', formData)
   }
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (e: any) => {
     const { name, value } = e.target
-    setFormData(prev => ({ ...prev, [name]: value }))
+    setFormData((prev) => ({ ...prev, [name]: value }))
   }
 
   return (
     <div className="min-h-screen flex flex-col bg-white">
       <Navigation />
 
-      <div className="flex-grow pt-16 md:pt-20">
-        {/* Contact Form Section - Gray Background */}
-        <div className="bg-gray-100 p-6 md:p-8 lg:p-12">
-          <div className="max-w-7xl mx-auto">
-            <h1 className="text-xl md:text-2xl lg:text-3xl font-bold text-black mb-6 md:mb-8">CONTACT US</h1>
+      <div className="flex-grow pt-20 md:pt-24">
 
-            <form onSubmit={handleSubmit} className="space-y-4 md:space-y-5">
-              <div className="grid grid-cols-2 gap-3 md:gap-4 lg:gap-6">
-                <input
-                  type="text"
-                  name="name"
-                  value={formData.name}
+        {/* ================= CONTACT FORM ================= */}
+        <section className="bg-gray-100 py-10 md:py-14 lg:py-16">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div className="bg-gray-100 rounded-xl shadow-md p-6 md:p-8 lg:p-10">
+              
+              <h1 className="text-xl md:text-2xl lg:text-3xl font-bold text-black mb-6 md:mb-8 text-center md:text-left">
+                CONTACT US
+              </h1>
+
+              <form onSubmit={handleSubmit} className="space-y-4 md:space-y-5">
+
+                {/* Name + Role */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5 lg:gap-6">
+                  
+                  <input
+                    type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    placeholder="Name"
+                    className="w-full px-4 py-3 bg-[#D9D9D9] border-none  text-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1F6500]"
+                  />
+
+                  <select
+                    name="role"
+                    value={formData.role}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 bg-[#D9D9D9] border-none  text-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1F6500]"
+                  >
+                    <option value="">Role (Driver / Dealer / Other)</option>
+                    <option value="driver">Driver</option>
+                    <option value="dealer">Dealer</option>
+                    <option value="other">Other</option>
+                  </select>
+
+                </div>
+
+                {/* Message */}
+                <textarea
+                  name="message"
+                  value={formData.message}
                   onChange={handleChange}
-                  placeholder="Name"
-                  className="w-full px-3 md:px-4 lg:px-5 py-2.5 md:py-3 lg:py-4 bg-gray-300 text-gray-600 placeholder-gray-500 rounded text-sm md:text-base focus:outline-none focus:ring-2 focus:ring-green-600"
+                  rows={5}
+                  placeholder="Message"
+                  className="w-full px-4 py-3 bg-[#D9D9D9] border-none  text-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1F6500] resize-none"
                 />
-                <select
-                  name="role"
-                  value={formData.role}
-                  onChange={handleChange}
-                  className="w-full px-3 md:px-4 lg:px-5 py-2.5 md:py-3 lg:py-4 bg-gray-300 text-gray-500 rounded text-sm md:text-base focus:outline-none focus:ring-2 focus:ring-green-600 appearance-none"
+
+                {/* Button */}
+                <button
+                  type="submit"
+                  className="w-full bg-[#1F6500] hover:bg-green-800 text-white py-3 rounded-md font-semibold transition"
                 >
-                  <option value="">Role [Driver/Dealer/Other]</option>
-                  <option value="driver">Driver</option>
-                  <option value="dealer">Dealer</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
+                  Submit
+                </button>
 
-              <textarea
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                rows={5}
-                placeholder="Message"
-                className="w-full px-3 md:px-4 lg:px-5 py-2.5 md:py-3 lg:py-4 bg-gray-300 text-gray-600 placeholder-gray-500 rounded text-sm md:text-base focus:outline-none focus:ring-2 focus:ring-green-600 resize-none md:rows-6 lg:rows-8"
-              />
+              </form>
+            </div>
 
-              <button
-                type="submit"
-                className="w-full bg-green-600 hover:bg-green-700 text-white py-2.5 md:py-3 lg:py-4 rounded font-semibold text-sm md:text-base lg:text-lg transition-colors"
-              >
-                Submit
-              </button>
-            </form>
           </div>
-        </div>
+        </section>
 
-        {/* Head Office + Map Section */}
-        <div className="flex flex-col md:flex-row">
-          {/* Head Office - Left on tablet/desktop */}
-          <div className="bg-white p-6 md:p-8 lg:p-12 md:w-1/2">
-            <h2 className="text-lg md:text-xl lg:text-2xl font-bold text-black mb-4 md:mb-6">Head Office</h2>
-            <ul className="space-y-3 md:space-y-4 text-sm md:text-base lg:text-lg text-gray-700">
-              <li className="flex items-start gap-3 md:gap-4">
-                <MapPin size={20} className="mt-0.5 flex-shrink-0 text-gray-600 md:w-6 md:h-6" />
-                <span>10/3, 3rd Floor, Pusta Road, New<br />Delhi – 110030</span>
+        {/* ================= OFFICE + MAP ================= */}
+        <section className="flex flex-col md:flex-row items-stretch">
+
+          {/* LEFT - OFFICE */}
+          <div className="bg-white p-6 md:p-10 lg:p-12 md:w-1/2 flex flex-col justify-center">
+            
+            <h2 className="text-lg md:text-xl lg:text-2xl font-bold text-black mb-4 md:mb-6">
+              Head Office
+            </h2>
+
+            <ul className="space-y-4 text-sm md:text-base lg:text-lg text-gray-700">
+              
+              <li className="flex items-start gap-3">
+                <MapPin className="text-gray-600 mt-1" />
+                <span>
+                  10/3, 3rd Floor, Pusta Road, New<br />
+                  Delhi – 110030
+                </span>
               </li>
-              <li className="flex items-center gap-3 md:gap-4">
-                <Phone size={20} className="flex-shrink-0 text-gray-600 md:w-6 md:h-6" />
+
+              <li className="flex items-center gap-3">
+                <Phone className="text-gray-600" />
                 <span>1800-1234-567</span>
               </li>
-              <li className="flex items-center gap-3 md:gap-4">
-                <Mail size={20} className="flex-shrink-0 text-gray-600 md:w-6 md:h-6" />
+
+              <li className="flex items-center gap-3">
+                <Mail className="text-gray-600" />
                 <span>connect@bharatgreenvolt.com</span>
               </li>
+
             </ul>
           </div>
 
-          {/* Map Section - Right on tablet/desktop */}
-          <div className="bg-green-600 p-4 md:p-6 lg:p-8 md:w-1/2">
-            <div className="rounded-lg overflow-hidden shadow-lg h-full">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224345.83923192776!2d77.06889754725782!3d28.52758200617607!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b347eb62d%3A0x52c2b7494e204dce!2sNew%20Delhi%2C%20Delhi!5e0!3m2!1sen!2sin!4v1699123456789!5m2!1sen!2sin"
-                width="100%"
-                height="100%"
-                style={{ border: 0, minHeight: '280px' }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                className="w-full h-full min-h-[280px] md:min-h-[320px] lg:min-h-[350px]"
-              />
-            </div>
-          </div>
-        </div>
+          {/* RIGHT - MAP */}
+          <div className="bg-[#1F6500] p-4 md:p-6 lg:p-8 md:w-1/2">
+  
+  <div className="rounded-lg overflow-hidden shadow-lg w-full h-[300px] sm:h-[350px] md:h-[400px] lg:h-[450px]">
+    
+    <iframe
+      src="https://www.google.com/maps?q=New+Delhi&output=embed"
+      className="w-full h-full border-0"
+      loading="lazy"
+    />
+    
+  </div>
+
+</div>
+
+        </section>
+
       </div>
 
-      {/* Custom Footer for Contact Page */}
+      {/* ================= FOOTER ================= */}
       <footer className="bg-gray-200 py-6 md:py-8 lg:py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Logo and Social Icons Row */}
-          <div className="flex items-center justify-between mb-4 md:mb-6">
-            {/* Logo */}
-            <Link href="/" className="flex items-center">
-               <BharatLogo height={32} />
+
+          {/* Logo + Social */}
+          <div className="flex items-center justify-between mb-6">
+            
+            <Link href="/">
+              <BharatLogo height={32} />
             </Link>
 
-            {/* Social Icons */}
-            <div className="flex gap-3 md:gap-4">
-              <a href="#" className="w-9 h-9 md:w-10 md:h-10 lg:w-12 lg:h-12 border-2 border-black rounded-full flex items-center justify-center hover:border-green-600 hover:text-green-600 transition">
-                <Linkedin size={16} className="md:w-5 md:h-5" />
+            <div className="flex gap-4">
+              
+              <a className="w-10 h-10 border-2 border-black rounded-full flex items-center justify-center hover:border-[#1F6500] hover:text-[#1F6500] transition">
+                <Linkedin size={18} />
               </a>
-              <a href="#" className="w-9 h-9 md:w-10 md:h-10 lg:w-12 lg:h-12 border-2 border-black rounded-full flex items-center justify-center hover:border-green-600 hover:text-green-600 transition">
-                <Instagram size={16} className="md:w-5 md:h-5" />
+
+              <a className="w-10 h-10 border-2 border-black rounded-full flex items-center justify-center hover:border-[#1F6500] hover:text-[#1F6500] transition">
+                <Instagram size={18} />
               </a>
-              <a href="#" className="w-9 h-9 md:w-10 md:h-10 lg:w-12 lg:h-12 border-2 border-black rounded-full flex items-center justify-center hover:border-green-600 hover:text-green-600 transition">
-                <Youtube size={16} className="md:w-5 md:h-5" />
+
+              <a className="w-10 h-10 border-2 border-black rounded-full flex items-center justify-center hover:border-[#1F6500] hover:text-[#1F6500] transition">
+                <Youtube size={18} />
               </a>
+
             </div>
           </div>
 
-          {/* Copyright and Links */}
+          {/* Copyright */}
           <div className="text-center">
             <p className="text-gray-700 text-sm md:text-base mb-2">
-              Copyright @ 2026 BHARAT GREEN VOLT, All rights reserved.
+              Copyright © 2026 BHARAT GREEN VOLT
             </p>
-            <div className="flex flex-wrap justify-center gap-x-2 text-sm md:text-base text-gray-600">
-              <a href="#" className="hover:text-green-600 transition">Privacy Policy</a>
+
+            <div className="flex flex-wrap justify-center gap-2 text-sm text-gray-600">
+              <a className="hover:text-[#1F6500]">Privacy Policy</a>
               <span>|</span>
-              <a href="#" className="hover:text-green-600 transition">Refund & Cancellation Policy</a>
-            </div>
-            <div className="flex flex-wrap justify-center gap-x-2 text-sm md:text-base text-gray-600 mt-1">
-              <a href="#" className="hover:text-green-600 transition">Terms & Conditions</a>
+              <a className="hover:text-[#1F6500]">Terms & Conditions</a>
               <span>|</span>
-              <a href="#" className="hover:text-green-600 transition">Corporate Governance</a>
+              <a className="hover:text-[#1F6500]">Corporate Governance</a>
             </div>
           </div>
+
         </div>
       </footer>
     </div>
