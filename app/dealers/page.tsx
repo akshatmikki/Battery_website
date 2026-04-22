@@ -137,9 +137,9 @@ export default function Dealers() {
         <p className="text-xs sm:text-sm lg:text-base text-gray-700">
           Our IoT tech tracks the battery
           <br />
-          and allows remote immobilization if
+          and allows remote immobilization 
           <br />
-          payments fail. You never lose an asset
+         if payments fail. You never lose an asset
         </p>
       </div>
 
