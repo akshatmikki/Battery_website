@@ -68,34 +68,42 @@ export default function Technology() {
       <Navigation />
 
       {/* Hero Section */}
-<section className="pt-20 md:pt-24 lg:pt-28 pb-6 md:pb-8 lg:pb-10">        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Desktop: Side by side layout */}
-          <div className="lg:flex lg:items-center lg:gap-12">
-            <div className="lg:w-1/2">
-  <h1 className="text-[28px] sm:text-[32px] md:text-[34px] lg:text-[37px] font-bold text-black leading-[100%] tracking-[0%]">
-    THE INTELLIGENCE
-  </h1>
+<section className="pt-20 md:pt-24 lg:pt-28 pb-8 md:pb-10 lg:pb-12">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-  <h2 className="text-[28px] sm:text-[32px] md:text-[34px] lg:text-[37px] font-bold text-black leading-[100%] tracking-[0%] mt-1">
-    BEHIND THE ENERGY.
-  </h2>
-</div>
-            
-            {/* Hero Image - Full Width on mobile, half on desktop */}
-            <div className="lg:w-1/2">
-              <div className="relative w-full h-48 sm:h-64 md:h-80 lg:h-[400px] xl:h-[450px] lg:rounded-lg lg:overflow-hidden">
-                <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1ef61249cc67c987ecf209cc26f398c4ea45e827-d4Ws59vKEctwJl99If7rvaXiWNze9D.jpg"
-                  alt="AI Technology - The Intelligence Behind The Energy"
-                  fill
-                  className="object-cover"
-                  priority
-                />
-              </div>
-            </div>
-          </div>
+    <div className="flex flex-col items-center">
+
+      {/* TEXT TOP */}
+      <div className="w-full text-center mb-6 md:mb-8 lg:mb-10">
+        <h1 className="text-[26px] sm:text-[32px] md:text-[36px] lg:text-[42px] font-bold text-black leading-tight">
+          THE INTELLIGENCE
+        </h1>
+
+        <h2 className="text-[26px] sm:text-[32px] md:text-[36px] lg:text-[42px] font-bold text-black leading-tight mt-1">
+          BEHIND THE ENERGY.
+        </h2>
+      </div>
+
+      {/* IMAGE BOTTOM */}
+      <div className="w-full">
+        <div className="relative w-full h-[220px] sm:h-[300px] md:h-[380px] lg:h-[450px] xl:h-[500px] rounded-xl overflow-hidden">
+
+          <Image
+            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1ef61249cc67c987ecf209cc26f398c4ea45e827-d4Ws59vKEctwJl99If7rvaXiWNze9D.jpg"
+            alt="AI Technology - The Intelligence Behind The Energy"
+            fill
+            priority
+            className="object-cover object-center"
+            sizes="100vw"
+          />
+
         </div>
-      </section>
+      </div>
+
+    </div>
+
+  </div>
+</section>
 
       {/* Technology Cards Section */}
      <section className="py-12 md:py-16 lg:py-20 bg-[#1F6500]">
