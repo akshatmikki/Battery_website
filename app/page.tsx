@@ -8,12 +8,12 @@ export default function Home() {
     <div className="bg-white">
       <Navigation />
       
-      {/* Hero Section */}
+      {/* SECTION 1 — HERO BANNER */}
       <section className="relative w-full pt-16">
         <div className="relative h-[85vh] sm:h-[80vh] md:h-[85vh] lg:h-[90vh] min-h-[600px] max-h-[900px]">
           <Image
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1263a64d160c97666bc23d23e6c1c65383ced5fa-XQvsb7Bi8QVproalHsfwHaygSGRgWE.png"
-            alt="Electric auto-rickshaw and smart battery swap station"
+            src="/images/hero-main.png"
+            alt="Bharat Green Volt Hero"
             fill
             className="object-cover object-center"
             priority
@@ -25,26 +25,22 @@ export default function Home() {
           <div className="absolute bottom-0 left-0 right-0 pb-8 sm:pb-12 lg:pb-16 px-4 sm:px-6 lg:px-8">
             <div className="max-w-7xl mx-auto">
               <div className="max-w-xl lg:max-w-2xl">
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-1 leading-tight">
-                  <span className="text-amber-400">POWERING</span>
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-2 leading-tight">
+                  Own Your Road. <br />
+                  <span className="text-green-500 font-semibold uppercase">Run on Green.</span>
                 </h1>
-                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-2">
-                  THE NEW INDIA
-                </h2>
-                <p className="text-sm sm:text-base lg:text-lg text-white mb-3 font-medium">
-                  WITH <span className="text-green-500 font-semibold">SMART VEHICLE LEASING</span>.
-                </p>
-                <p className="text-sm sm:text-base text-gray-300 mb-6 lg:mb-8 leading-relaxed">
-                  Zero upfront cost for drivers.<br />
-                  Instant financing and IoT-backed security for dealers.
+                <p className="text-sm sm:text-base lg:text-lg text-white mb-6 font-medium max-w-lg">
+                  Bharat Green Volt makes electric e-rickshaws affordable for every driver and easy to 
+                  manage for every dealer — with smart IoT technology, flexible leasing, and zero-hassle 
+                  support.
                 </p>
                 <div className="flex flex-wrap gap-3 sm:gap-4">
-                  <Link href="/dealers" className="bg-green-600 hover:bg-green-700 text-white px-5 sm:px-8 py-3 rounded text-sm sm:text-base font-bold transition-colors">
-                    BECOME A DEALER
+                  <Link href="/dealers" className="bg-green-600 hover:bg-green-700 text-white px-5 sm:px-8 py-3 rounded text-sm sm:text-base font-bold transition-colors uppercase">
+                    Become a Dealer
                   </Link>
-                  <button className="border-2 border-green-600 text-green-500 hover:bg-green-600/10 px-5 sm:px-8 py-3 rounded text-sm sm:text-base font-bold transition-colors">
-                    LOCATE OUR STORE
-                  </button>
+                  <Link href="/drivers" className="border-2 border-white text-white hover:bg-white/10 px-5 sm:px-8 py-3 rounded text-sm sm:text-base font-bold transition-colors uppercase">
+                    I'm a Driver
+                  </Link>
                 </div>
               </div>
             </div>
@@ -52,37 +48,31 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-10 sm:py-12 lg:py-16 bg-white">
+      {/* SECTION 2 — STATS BAR */}
+      <section className="py-10 sm:py-12 lg:py-16 bg-white border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-4 lg:gap-8 max-w-3xl mx-auto">
-            {/* Clean KMs Driven */}
             <div className="text-center">
               <div className="w-16 h-16 sm:w-14 sm:h-14 lg:w-20 lg:h-20 border-2 border-green-600 rounded-full flex items-center justify-center mx-auto mb-3">
                 <svg className="w-8 h-8 sm:w-6 sm:h-6 lg:w-10 lg:h-10 text-green-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <circle cx="12" cy="12" r="10" />
-                  <path d="M12 6v6l4 2" />
+                  <path d="M12 2v20M2 12h20M12 2l-4 4M12 2l4 4M12 22l-4-4M12 22l4-4" />
                 </svg>
               </div>
-              <div className="text-2xl sm:text-xl lg:text-3xl font-bold text-black">10+ M</div>
-              <p className="text-xs sm:text-xs lg:text-sm text-gray-500">Clean KMs Driven</p>
+              <div className="text-2xl sm:text-xl lg:text-3xl font-bold text-black uppercase">100+</div>
+              <p className="text-xs sm:text-xs lg:text-sm text-gray-500">E-Rickshaws on Road</p>
             </div>
             
-            {/* Drivers Empowered */}
             <div className="text-center">
               <div className="w-16 h-16 sm:w-14 sm:h-14 lg:w-20 lg:h-20 border-2 border-green-600 rounded-full flex items-center justify-center mx-auto mb-3">
                 <svg className="w-8 h-8 sm:w-6 sm:h-6 lg:w-10 lg:h-10 text-green-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
                   <circle cx="9" cy="7" r="4" />
-                  <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-                  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
                 </svg>
               </div>
-              <div className="text-2xl sm:text-xl lg:text-3xl font-bold text-black">5000+</div>
-              <p className="text-xs sm:text-xs lg:text-sm text-gray-500">Drivers Empowered</p>
+              <div className="text-2xl sm:text-xl lg:text-3xl font-bold text-black uppercase">3</div>
+              <p className="text-xs sm:text-xs lg:text-sm text-gray-500">Cities in Haryana & NCR</p>
             </div>
             
-            {/* CO2 Saved */}
             <div className="text-center">
               <div className="w-16 h-16 sm:w-14 sm:h-14 lg:w-20 lg:h-20 border-2 border-green-600 rounded-full flex items-center justify-center mx-auto mb-3">
                 <svg className="w-8 h-8 sm:w-6 sm:h-6 lg:w-10 lg:h-10 text-green-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -90,135 +80,210 @@ export default function Home() {
                   <path d="M7 12l3 3 7-7" />
                 </svg>
               </div>
-              <div className="text-2xl sm:text-xl lg:text-3xl font-bold text-black">1200</div>
-              <p className="text-xs sm:text-xs lg:text-sm text-gray-500">Tons of CO2 Saved</p>
+              <div className="text-2xl sm:text-xl lg:text-3xl font-bold text-black uppercase">₹0</div>
+              <p className="text-xs sm:text-xs lg:text-sm text-gray-500">Down Payment to Start</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* How Bharat Green Volt Works */}
-      <section className="py-10 sm:py-12 lg:py-16 bg-green-600">
+      {/* SECTION 3 — WHO WE ARE */}
+      <section className="py-12 sm:py-16 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-8 lg:mb-12 text-center">
-            HOW BHARAT GREEN VOLT WORKS
-          </h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto">
-            {/* Digital KYC */}
-            <div className="bg-white rounded-lg overflow-hidden shadow-lg">
-              <div className="relative h-40 sm:h-36 lg:h-48">
-                <Image
-                  src="/images/home-digital-kyc.jpg"
-                  alt="Digital KYC"
-                  fill
-                  className="object-cover"
-                />
+          <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
+            <div className="lg:w-1/2">
+              <h3 className="text-green-600 font-bold text-sm lg:text-base mb-4 uppercase tracking-wider">WHO WE ARE</h3>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black mb-6 leading-tight">
+                Built in Bharat. <br />Built for Atmanirbhar Bharat.
+              </h2>
+              <div className="space-y-4 text-gray-700 text-sm sm:text-base lg:text-lg leading-relaxed">
+                <p>Bharat Green Volt is a Faridabad-based electric vehicle company on a mission to put clean, affordable mobility in the hands of India's hardest-working people.</p>
+                <p>We assemble and brand our own e-rickshaws and scooters, lease them to drivers at low monthly costs, and support dealers with the tools and technology they need to grow. Our fleet runs on smart IoT-enabled batteries, tracked in real time so drivers never get stranded and dealers always stay in control.</p>
+                <p className="font-semibold text-black">We are women-led, DPIIT-recognised, and proud to be building India's electric future from the ground up.</p>
               </div>
-              <div className="p-4 lg:p-6 text-center">
-                <h3 className="font-bold text-black text-sm lg:text-base mb-1">DIGITAL KYC</h3>
-                <p className="text-xs lg:text-sm text-gray-600">Instant approval at the dealership</p>
-              </div>
-            </div>
-
-            {/* Smart Battery */}
-            <div className="bg-white rounded-lg overflow-hidden shadow-lg">
-              <div className="relative h-40 sm:h-36 lg:h-48">
-                <Image
-                  src="/images/home-smart-battery.jpg"
-                  alt="Smart Battery"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="p-4 lg:p-6 text-center">
-                <h3 className="font-bold text-black text-sm lg:text-base mb-1">SMART BATTERY ASSIGNED</h3>
-                <p className="text-xs lg:text-sm text-gray-600">Plug-and-play high-range Lithium-ion</p>
-              </div>
-            </div>
-
-            {/* Drive & Earn */}
-            <div className="bg-white rounded-lg overflow-hidden shadow-lg">
-              <div className="relative h-40 sm:h-36 lg:h-48">
-                <Image
-                  src="/images/home-drive-earn.jpg"
-                  alt="Drive & Earn"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="p-4 lg:p-6 text-center">
-                <h3 className="font-bold text-black text-sm lg:text-base mb-1">DRIVE & EARN</h3>
-                <p className="text-xs lg:text-sm text-gray-600">Pay daily/weekly via our app, double your daily range</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Dual Value Proposition */}
-      <section className="py-10 sm:py-12 lg:py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-black mb-8 lg:mb-12 text-center">
-            DUAL VALUE PROPOSITION
-          </h2>
-          
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-8 max-w-3xl mx-auto">
-            {/* For Drivers */}
-            <div className="border border-gray-200 rounded-lg p-5 lg:p-8">
-              <p className="text-sm lg:text-base text-gray-700 mb-4 lg:mb-6 leading-relaxed">
-                &quot;Say goodbye to paper-wali (lead-acid) batteries. Charge faster, drive longer, earn more.&quot;
-              </p>
-              <Link href="/drivers" className="inline-block bg-green-600 hover:bg-green-700 text-white px-5 lg:px-6 py-2.5 rounded text-sm font-semibold transition-colors">
-                Learn More
+              <Link href="/about" className="inline-block mt-8 text-green-600 font-bold hover:underline">
+                Learn More About Us →
               </Link>
             </div>
-            
-            {/* For Dealers */}
-            <div className="border border-gray-200 rounded-lg p-5 lg:p-8">
-              <p className="text-sm lg:text-base text-gray-700 mb-4 lg:mb-6 leading-relaxed">
-                &quot;Turn your shop into a recurring revenue hub. We handle the tech and financing.&quot;
-              </p>
-              <Link href="/dealers" className="inline-block border-2 border-green-600 text-green-600 hover:bg-green-50 px-5 lg:px-6 py-2.5 rounded text-sm font-semibold transition-colors">
-                Partner With Us
-              </Link>
+            <div className="lg:w-1/2 relative h-[300px] sm:h-[400px] lg:h-[500px] w-full rounded-lg overflow-hidden shadow-xl">
+              <Image src="/images/who_we_are_ev.png" alt="Who We Are" fill className="object-cover" />
             </div>
           </div>
         </div>
       </section>
 
-      
-
-      {/* Tech Advantage with Image */}
-<section className="bg-gray-900 text-white">
-  <div className="max-w-7xl mx-auto">
-
-    {/* Image */}
-    <div className="relative w-full h-[250px] sm:h-[350px] md:h-[450px] lg:h-[500px]">
-      <Image
-        src="/images/the-tech-advantage.jpg" //
-        alt="Tech Advantage"
-        fill
-        className="object-cover"
-      />
-
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-black/60 flex items-center justify-center px-4 text-center">
-        <div>
-          <h2 className="text-lg sm:text-xl lg:text-2xl font-bold mb-4">
-            THE TECH ADVANTAGE
+      {/* SECTION 4 — HOW IT WORKS */}
+      <section className="py-10 sm:py-12 lg:py-20 bg-green-600">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h3 className="text-white/80 font-bold text-center text-xs lg:text-sm mb-2 uppercase tracking-widest">HOW IT WORKS</h3>
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-10 lg:mb-16 text-center uppercase tracking-tight">
+            Simple. Affordable. Electric.
           </h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
+            <div className="bg-white rounded-lg overflow-hidden shadow-lg transform hover:-translate-y-1 transition-transform">
+              <div className="p-8 text-center space-y-4">
+                <div className="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center mx-auto text-green-600">
+                  <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M15 10l-4 4l6 6l4-16l-18 7l4 2l2 6l3-4"/></svg>
+                </div>
+                <h3 className="font-bold text-black text-lg uppercase tracking-tight">Pick Your Vehicle</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">Choose from our range of Bharat Green Volt branded e-vehicles — built for daily transport and last-mile logistics. No paperwork headache, no hidden costs.</p>
+              </div>
+            </div>
+            <div className="bg-white rounded-lg overflow-hidden shadow-lg transform hover:-translate-y-1 transition-transform">
+              <div className="p-8 text-center space-y-4">
+                <div className="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center mx-auto text-green-600">
+                  <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><path d="M12 18h.01"/></svg>
+                </div>
+                <h3 className="font-bold text-black text-lg uppercase tracking-tight">Download the App</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">Track your battery health, monitor earnings, plan your route, and manage payments — all from the Bharat Green Volt driver app on your phone.</p>
+              </div>
+            </div>
+            <div className="bg-white rounded-lg overflow-hidden shadow-lg transform hover:-translate-y-1 transition-transform">
+              <div className="p-8 text-center space-y-4">
+                <div className="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center mx-auto text-green-600">
+                  <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                </div>
+                <h3 className="font-bold text-black text-lg uppercase tracking-tight">Hit the Road</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">Start earning from Day 1. Pay a simple monthly lease. Our support team is available whenever you need help.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-          <p className="text-sm sm:text-base lg:text-xl leading-relaxed max-w-xl mx-auto">
-            "Powered by our proprietary Two-Brain System:
-            Seamless Finance meets Real-Time IoT Battery Tracking."
+      {/* SECTION 5 — FOR DEALERS */}
+      <section className="py-16 sm:py-24 bg-gray-900 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-4xl mx-auto mb-16">
+            <h3 className="text-green-500 font-bold text-sm lg:text-base mb-4 uppercase tracking-wider">FOR DEALERS</h3>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">Grow Your EV Business With Us</h2>
+            <p className="text-gray-400 text-lg leading-relaxed">
+              Join the Bharat Green Volt dealer network and tap into the fastest-growing segment of 
+              India's transport sector. We give you the vehicles, the technology platform, and the customer 
+              pipeline — you focus on sales and service.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            {[
+              { title: "Ready-to-Sell Inventory", desc: "Access Bharat Green Volt branded e-rickshaws directly. No minimum order anxiety — we work with dealers of all sizes." },
+              { title: "Dealer Dashboard", desc: "Manage your fleet, track vehicle performance, monitor lease payments, and view earnings — all from one smart dashboard built for dealers." },
+              { title: "Marketing & Sales Support", desc: "We support our dealers with co-branded marketing materials, lead generation tools, and a dedicated relationship manager." }
+            ].map((card, i) => (
+              <div key={i} className="border border-gray-800 p-8 rounded-lg hover:border-gray-700 transition-colors bg-gray-800/20">
+                <h4 className="text-xl font-bold mb-4 uppercase text-green-500 tracking-tight">{card.title}</h4>
+                <p className="text-gray-400 text-sm leading-relaxed">{card.desc}</p>
+              </div>
+            ))}
+          </div>
+          
+          <div className="text-center">
+            <Link href="/dealers" className="inline-block bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded font-bold transition-all uppercase tracking-wide">
+              Become a Dealer Partner
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 6 — FOR DRIVERS */}
+      <section className="py-16 sm:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-4xl mx-auto mb-16">
+            <h3 className="text-green-600 font-bold text-sm lg:text-base mb-4 uppercase tracking-wider">FOR DRIVERS</h3>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black mb-6">Your Rickshaw. Your Income. Your Terms.</h2>
+            <p className="text-gray-600 text-lg leading-relaxed">
+              Stop paying rent to fleet owners. With Bharat Green Volt, you lease your own e-rickshaw at a 
+              fixed monthly cost — lower than what you pay today. Drive more, earn more, and keep what 
+              you earn.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            {[
+              { title: "Zero Down Payment", desc: "Get on the road without a large upfront investment. Our lease plans start with zero or minimal security deposit." },
+              { title: "Smart Battery Monitoring", desc: "Never worry about running out of charge. Our IoT system tells you your battery level, nearest charging point, and estimated range — all on your phone." },
+              { title: "Own It One Day", desc: "Our lease-to-own plan means your monthly payments build towards full ownership. Your vehicle. Your asset." }
+            ].map((card, i) => (
+              <div key={i} className="border border-gray-200 p-8 rounded-lg hover:border-green-200 transition-colors">
+                <h4 className="text-xl font-bold mb-4 uppercase text-black tracking-tight">{card.title}</h4>
+                <p className="text-gray-600 text-sm leading-relaxed">{card.desc}</p>
+              </div>
+            ))}
+          </div>
+          
+          <div className="text-center">
+            <Link href="/drivers" className="inline-block bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded font-bold transition-all uppercase tracking-wide">
+              Apply as a Driver
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 7 — TECHNOLOGY HIGHLIGHT */}
+      <section className="bg-gray-900 text-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="relative w-full h-[250px] sm:h-[350px] md:h-[450px] lg:h-[500px]">
+            <Image src="/images/the-tech-advantage.jpg" alt="Tech Advantage" fill className="object-cover" />
+            <div className="absolute inset-0 bg-black/70 flex items-center justify-center px-4 text-center">
+              <div className="max-w-4xl mx-auto space-y-6">
+                <h3 className="text-green-500 font-bold text-sm lg:text-base uppercase tracking-widest">OUR TECHNOLOGY</h3>
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold uppercase tracking-tight">Smart Vehicles. Smarter Management.</h2>
+                <p className="text-sm sm:text-base lg:text-xl text-gray-300 leading-relaxed">
+                  Every Bharat Green Volt e-rickshaw comes equipped with an IoT telematics device that 
+                  monitors battery health, GPS location, and vehicle performance in real time. Dealers see 
+                  everything on their dashboard. Drivers stay informed on their app. Nothing breaks without warning.
+                </p>
+                <Link href="/technology" className="inline-block bg-white text-black hover:bg-gray-200 px-8 py-3 rounded font-bold uppercase tracking-wide transition-colors">
+                  Explore Our Technology
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 8 — TESTIMONIALS */}
+      <section className="py-16 lg:py-24 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h3 className="text-green-600 font-bold text-xs lg:text-sm mb-2 uppercase tracking-widest">WHAT PEOPLE ARE SAYING</h3>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black uppercase tracking-tight">Trusted by Drivers and Dealers Across NCR</h2>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              { quote: "Pehle fleet owner ko roz ₹300 deta tha. Ab apna rickshaw hai aur mahine mein sirf ₹3,500. Bharat Green Volt ne meri zindagi badal di.", author: "Ramesh Kumar, E-Rickshaw Driver, Faridabad" },
+              { quote: "The dealer dashboard is excellent. I can see all my vehicles, their battery status, and payments in one place. Never had this kind of visibility before.", author: "Suresh Sharma, Dealer Partner, Ballabhgarh" },
+              { quote: "As a woman entrepreneur, I am proud to work with a company that understands the ground reality of EV transport in India. Their support is genuine.", author: "Kavita Singh, Fleet Operator, Gurugram" }
+            ].map((t, i) => (
+              <div key={i} className="bg-white p-8 rounded border border-gray-100 shadow-sm relative italic text-gray-700">
+                <p className="mb-6 leading-relaxed">"{t.quote}"</p>
+                <p className="not-italic font-bold text-black text-sm uppercase tracking-tight">— {t.author}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 9 — CTA BANNER */}
+      <section className="py-16 lg:py-24 bg-green-600 text-white">
+        <div className="max-w-4xl mx-auto px-4 text-center space-y-8">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tighter">Ready to Go Green?</h2>
+          <p className="text-lg lg:text-xl text-white/90">
+            Whether you are a driver looking for your first e-rickshaw or a dealer ready to 
+            expand your EV business — Bharat Green Volt is your partner.
           </p>
+          <div className="flex flex-wrap justify-center gap-4 pt-4">
+            <Link href="/contact" className="bg-white text-green-600 hover:bg-gray-100 px-8 py-4 rounded font-bold uppercase tracking-wide transition-all shadow-lg">
+              For Dealers — Get in Touch
+            </Link>
+            <Link href="/drivers" className="border-2 border-white text-white hover:bg-white/10 px-8 py-4 rounded font-bold uppercase tracking-wide transition-all">
+              For Drivers — Apply Now
+            </Link>
+          </div>
         </div>
-      </div>
-    </div>
-
-  </div>
-</section>
+      </section>
 
       <Footer />
     </div>
