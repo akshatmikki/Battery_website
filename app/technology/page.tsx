@@ -2,178 +2,166 @@ import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 import Image from 'next/image'
 
-// Finance Engine Icon (Rupee with Gear)
-function FinanceEngineIcon() {
-  return (
-    <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="32" cy="32" r="20" stroke="#16a34a" strokeWidth="2" fill="none" />
-      <path d="M32 12 L34 8 L30 8 Z" fill="#16a34a" />
-      <path d="M32 52 L34 56 L30 56 Z" fill="#16a34a" />
-      <path d="M12 32 L8 34 L8 30 Z" fill="#16a34a" />
-      <path d="M52 32 L56 34 L56 30 Z" fill="#16a34a" />
-      <path d="M18 18 L15 15 L18 15 Z" fill="#16a34a" />
-      <path d="M46 46 L49 49 L46 49 Z" fill="#16a34a" />
-      <path d="M46 18 L49 15 L46 15 Z" fill="#16a34a" />
-      <path d="M18 46 L15 49 L18 49 Z" fill="#16a34a" />
-      <text x="32" y="38" textAnchor="middle" fill="#16a34a" fontSize="18" fontWeight="bold">&#x20B9;</text>
-    </svg>
-  )
-}
-
-// IoT Asset Engine Icon
-function IoTEngineIcon() {
-  return (
-    <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-      {/* Central device */}
-      <rect x="24" y="24" width="16" height="16" rx="2" stroke="#16a34a" strokeWidth="2" fill="none" />
-      <text x="32" y="35" textAnchor="middle" fill="#16a34a" fontSize="8" fontWeight="bold">IoT</text>
-      {/* Connection lines */}
-      <line x1="32" y1="12" x2="32" y2="24" stroke="#16a34a" strokeWidth="2" />
-      <line x1="32" y1="40" x2="32" y2="52" stroke="#16a34a" strokeWidth="2" />
-      <line x1="12" y1="32" x2="24" y2="32" stroke="#16a34a" strokeWidth="2" />
-      <line x1="40" y1="32" x2="52" y2="32" stroke="#16a34a" strokeWidth="2" />
-      {/* Connected nodes */}
-      <circle cx="32" cy="10" r="4" stroke="#16a34a" strokeWidth="2" fill="none" />
-      <circle cx="32" cy="54" r="4" stroke="#16a34a" strokeWidth="2" fill="none" />
-      <circle cx="10" cy="32" r="4" stroke="#16a34a" strokeWidth="2" fill="none" />
-      <circle cx="54" cy="32" r="4" stroke="#16a34a" strokeWidth="2" fill="none" />
-      {/* Diagonal connections */}
-      <line x1="18" y1="18" x2="26" y2="26" stroke="#16a34a" strokeWidth="1.5" strokeDasharray="2 2" />
-      <line x1="46" y1="18" x2="38" y2="26" stroke="#16a34a" strokeWidth="1.5" strokeDasharray="2 2" />
-      <line x1="18" y1="46" x2="26" y2="38" stroke="#16a34a" strokeWidth="1.5" strokeDasharray="2 2" />
-      <line x1="46" y1="46" x2="38" y2="38" stroke="#16a34a" strokeWidth="1.5" strokeDasharray="2 2" />
-    </svg>
-  )
-}
-
-// Remote Kill Switch Icon
-function KillSwitchIcon() {
-  return (
-    <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-      {/* Crossed lines forming X pattern */}
-      <line x1="16" y1="16" x2="48" y2="48" stroke="#16a34a" strokeWidth="3" />
-      <line x1="48" y1="16" x2="16" y2="48" stroke="#16a34a" strokeWidth="3" />
-      {/* Arrow heads */}
-      <path d="M14 14 L20 14 L14 20 Z" fill="#16a34a" />
-      <path d="M50 14 L44 14 L50 20 Z" fill="#16a34a" />
-      <path d="M14 50 L20 50 L14 44 Z" fill="#16a34a" />
-      <path d="M50 50 L44 50 L50 44 Z" fill="#16a34a" />
-    </svg>
-  )
-}
-
 export default function Technology() {
   return (
     <div className="bg-white">
       <Navigation />
 
-      {/* Hero Section */}
-<section className="pt-20 md:pt-24 lg:pt-28 pb-8 md:pb-10 lg:pb-12">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-    <div className="flex flex-col items-center">
-
-      {/* TEXT TOP */}
-      <div className="w-full text-center mb-6 md:mb-8 lg:mb-10">
-        <h1 className="text-[26px] sm:text-[32px] md:text-[36px] lg:text-[42px] font-bold text-black leading-tight">
-          THE INTELLIGENCE
-        </h1>
-
-        <h2 className="text-[26px] sm:text-[32px] md:text-[36px] lg:text-[42px] font-bold text-black leading-tight mt-1">
-          BEHIND THE ENERGY.
-        </h2>
-      </div>
-
-      {/* IMAGE BOTTOM */}
-      <div className="w-full">
-        <div className="relative w-full h-[220px] sm:h-[300px] md:h-[380px] lg:h-[450px] xl:h-[500px] rounded-xl overflow-hidden">
-
+      {/* SECTION 1 — HERO SECTION */}
+      <section className="relative pt-16">
+        <div className="relative h-[300px] sm:h-[400px] md:h-[450px] lg:h-[500px]">
           <Image
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1ef61249cc67c987ecf209cc26f398c4ea45e827-d4Ws59vKEctwJl99If7rvaXiWNze9D.jpg"
-            alt="AI Technology - The Intelligence Behind The Energy"
+            src="/images/technology-hero.jpg"
+            alt="Bharat Green Volt Smart Technology"
             fill
-            priority
             className="object-cover object-center"
-            sizes="100vw"
+            priority
           />
-
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+          <div className="absolute bottom-10 sm:bottom-12 md:bottom-16 left-0 right-0">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight uppercase tracking-tight">
+                Every Volt. Tracked. <br />Protected. Optimised.
+              </h1>
+              <p className="text-sm sm:text-base md:text-lg text-white/90 max-w-3xl font-medium leading-relaxed">
+                Bharat Green Volt vehicles run on smart IoT technology that gives drivers 
+                real-time visibility and gives dealers complete fleet control — all from a phone or dashboard.
+              </p>
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
 
-    </div>
-
-  </div>
-</section>
-
-      {/* Technology Cards Section */}
-     <section className="py-12 md:py-16 lg:py-20 bg-[#1F6500]">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto">
-      
-      {/* Finance Engine Card */}
-      <div className="bg-white rounded-lg p-6 md:p-8 lg:p-10 text-center shadow-sm hover:shadow-md transition-shadow sm:col-span-2 lg:col-span-1">
-        
-        <div className="flex justify-center mb-4 lg:mb-6">
-          <img
-            src="/images/engineering.png"
-            alt="Finance Engine"
-            className="w-14 h-14 sm:w-16 sm:h-16 object-contain"
-          />
+      {/* SECTION 2 — THE TECHNOLOGY STACK */}
+      <section className="py-16 sm:py-24 lg:py-32 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16 lg:mb-20">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black uppercase tracking-tight">
+              Smart from the Inside Out
+            </h2>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 max-w-6xl mx-auto">
+            {[
+              {
+                title: "Built-In Intelligence",
+                subtitle: "IoT Telematics Device",
+                desc: "Every Bharat Green Volt e-rickshaw is fitted with our IoT telematics unit — a compact device that continuously monitors battery voltage, current draw, temperature, GPS location, and vehicle health. Data is transmitted to the cloud in real time so you always know what is happening with every vehicle on your fleet.",
+                image: "/images/technology.png"
+              },
+              {
+                title: "Battery Health You Can Trust",
+                subtitle: "Battery Management System (BMS)",
+                desc: "Our Battery Management System monitors each cell of the battery pack individually. It prevents overcharging, deep discharge, and overheating — the three main causes of early battery failure. The result is a battery that lasts longer and a driver who never gets stranded unexpectedly.",
+                image: "/images/smart-battery.jpg"
+              },
+              {
+                title: "Fleet Control for Dealers",
+                subtitle: "Dealer Dashboard",
+                desc: "Our web-based dealer dashboard gives you a bird's eye view of your entire fleet. Track vehicle locations, battery levels, payment statuses, and service history — all updated in real time. No spreadsheets. No phone calls to check status. Everything you need in one clean interface.",
+                image: "/images/dealer-dashboard.jpg"
+              },
+              {
+                title: "The Co-Pilot in Your Pocket",
+                subtitle: "Driver App",
+                desc: "The Bharat Green Volt driver app is designed for India's roads. Simple interface, available in Hindi and English, and built to work on low-end Android devices with basic internet connectivity. Drivers use it to check battery status, find charging stations, track earnings, and contact support.",
+                image: "/images/home-smart-battery.jpg"
+              }
+            ].map((tech, index) => (
+              <div key={index} className="flex flex-col gap-6 group">
+                <div className="relative h-64 w-full rounded-2xl overflow-hidden shadow-md">
+                  <Image src={tech.image} alt={tech.title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <div className="absolute inset-0 bg-black/10" />
+                  <div className="absolute top-4 left-4">
+                    <span className="bg-green-600 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest">
+                      {tech.subtitle}
+                    </span>
+                  </div>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-black mb-3 uppercase tracking-tight">{tech.title}</h3>
+                  <p className="text-sm sm:text-base text-gray-600 leading-relaxed italic">{tech.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
+      </section>
 
-        <h3 className="font-bold text-sm md:text-base lg:text-lg text-black mb-3 lg:mb-4">
-          THE FINANCE ENGINE (LMS)
-        </h3>
-
-        <p className="text-xs md:text-sm lg:text-base text-gray-600 leading-relaxed">
-          Digital onboarding, CIBIL checks, automated e-NACH/UPI collections, and dealer ledger.
-        </p>
-      </div>
-
-      {/* Asset Engine Card */}
-      <div className="bg-white rounded-lg p-6 md:p-8 lg:p-10 text-center shadow-sm hover:shadow-md transition-shadow">
-        
-        <div className="flex justify-center mb-4 lg:mb-6">
-          <img
-            src="/images/technology.png"
-            alt="Asset Engine"
-            className="w-14 h-14 sm:w-16 sm:h-16 object-contain"
-          />
+      {/* SECTION 3 — TECHNOLOGY BENEFITS */}
+      <section className="py-16 sm:py-24 bg-gray-50 border-y border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black uppercase tracking-tight">
+              Why Smart Vehicles Make Business Sense
+            </h2>
+          </div>
+          
+          <div className="overflow-x-auto">
+            <div className="min-w-[600px] bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
+              <table className="w-full text-left">
+                <thead>
+                  <tr className="bg-gray-900 border-b border-gray-800">
+                    <th className="p-5 text-white font-bold uppercase tracking-wider text-sm">Benefit</th>
+                    <th className="p-5 text-green-500 font-bold uppercase tracking-wider text-sm">For Drivers</th>
+                    <th className="p-5 text-green-500 font-bold uppercase tracking-wider text-sm">For Dealers</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gray-100">
+                  {[
+                    { b: "Real-time battery monitoring", dr: "Never stranded mid-route", de: "Fewer breakdown complaints" },
+                    { b: "GPS fleet tracking", dr: "Know your route history", de: "Full visibility of all vehicles" },
+                    { b: "Payment integration", dr: "Pay lease from the app", de: "Automated payment alerts" },
+                    { b: "Predictive maintenance alerts", dr: "Service before breakdown", de: "Lower vehicle downtime" },
+                    { b: "Data reports", dr: "Track monthly earnings", de: "Make smart restocking decisions" }
+                  ].map((row, i) => (
+                    <tr key={i} className="hover:bg-gray-50 transition-colors">
+                      <td className="p-5 text-black font-bold text-sm uppercase">{row.b}</td>
+                      <td className="p-5 text-gray-600 text-sm">{row.dr}</td>
+                      <td className="p-5 text-gray-600 text-sm">{row.de}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <p className="text-center text-xs text-gray-400 mt-6 italic">Scroll horizontally if viewing on mobile</p>
         </div>
+      </section>
 
-        <h3 className="font-bold text-sm md:text-base lg:text-lg text-black mb-3 lg:mb-4">
-          THE ASSET ENGINE (IoT)
-        </h3>
-
-        <p className="text-xs md:text-sm lg:text-base text-gray-600 leading-relaxed">
-          Deep CAN-bus telemetry, real-time State of Charge (SoC), thermal alerts, and Geo-fencing.
-        </p>
-      </div>
-
-      {/* Remote Kill-Switch Card */}
-      <div className="bg-white rounded-lg p-6 md:p-8 lg:p-10 text-center shadow-sm hover:shadow-md transition-shadow">
-        
-        <div className="flex justify-center mb-4 lg:mb-6">
-          <img
-            src="/images/motorcycle.png"
-            alt="Kill Switch"
-            className="w-14 h-14 sm:w-16 sm:h-16 object-contain"
-          />
+      {/* SECTION 4 — SECURITY AND DATA */}
+      <section className="py-16 sm:py-24 lg:py-32 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-gray-900 rounded-3xl p-8 sm:p-12 lg:p-16 text-white relative overflow-hidden shadow-2xl">
+            <div className="absolute -top-10 -right-10 w-40 h-40 bg-green-600/20 rounded-full blur-3xl" />
+            <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-green-600/20 rounded-full blur-3xl" />
+            
+            <div className="relative z-10">
+              <div className="flex items-center gap-4 mb-8">
+                <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center">
+                  <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                  </svg>
+                </div>
+                <h2 className="text-2xl sm:text-3xl font-bold uppercase tracking-tight">Your Data Is Safe With Us</h2>
+              </div>
+              
+              <div className="space-y-6 text-gray-300 leading-relaxed text-sm sm:text-base lg:text-lg">
+                <p>
+                  All data collected by our IoT devices — including driver location, battery data, and trip history 
+                  — is stored on a secure, dedicated cloud infrastructure. We comply with India's <strong>Digital 
+                  Personal Data Protection Act, 2023</strong>. Driver data is never shared with third parties or used for 
+                  any purpose outside of operating your vehicle and lease account.
+                </p>
+                <p>
+                  Our platform is protected with end-to-end encryption, role-based access controls, and 
+                  regular security audits. We believe that technology should empower, not expose.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
-
-        <h3 className="font-bold text-sm md:text-base lg:text-lg text-black mb-3 lg:mb-4">
-          THE REMOTE KILL-SWITCH
-        </h3>
-
-        <p className="text-xs md:text-sm lg:text-base text-gray-600 leading-relaxed">
-          Explaining the security protocol. "If a lease defaults, the battery safely immobilizes via over-the-air commands."
-        </p>
-      </div>
-
-    </div>
-  </div>
-</section>
+      </section>
 
       <Footer />
     </div>
