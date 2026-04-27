@@ -1,9 +1,36 @@
+'use client'
+
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 import Image from 'next/image'
 import Link from 'next/link'
+import { buildMailtoUrl } from '@/lib/mailto'
 
 export default function Drivers() {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    const form = e.currentTarget
+    const data = new FormData(form)
+
+    const url = buildMailtoUrl({
+      to: 'info@bharatgreenvolt.com',
+      subject: `Website Enquiry (Driver Application) — ${(data.get('fullName') as string) || 'New driver application'}`,
+      fields: {
+        Page: 'Drivers',
+        'Full Name': data.get('fullName'),
+        'Mobile Number': data.get('mobileNumber'),
+        'City / Area': data.get('city'),
+        'Preferred Contact Time': data.get('contactTime'),
+        'Currently Drives Rickshaw': data.get('currentlyDrives'),
+        'Has Driving Licence': data.get('hasLicense'),
+        'Rickshaw Type': data.get('rickshawType'),
+      },
+    })
+
+    window.location.href = url
+    form.reset()
+  }
+
   return (
     <div className="bg-white">
       <Navigation />
@@ -231,23 +258,23 @@ export default function Drivers() {
               Submit your details and our team will call you within 24 hours.
             </p>
             
-            <form className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label className="text-xs font-bold uppercase text-gray-400 ml-1">Full Name *</label>
-                  <input type="text" className="w-full px-4 py-3.5 border border-gray-200 rounded-xl text-sm bg-gray-50 focus:ring-2 focus:ring-green-600 outline-none transition-all" required placeholder="Enter your full name" />
+                  <input name="fullName" type="text" className="w-full px-4 py-3.5 border border-gray-200 rounded-xl text-sm bg-gray-50 focus:ring-2 focus:ring-green-600 outline-none transition-all" required placeholder="Enter your full name" />
                 </div>
                 <div className="space-y-2">
                   <label className="text-xs font-bold uppercase text-gray-400 ml-1">Mobile Number *</label>
-                  <input type="tel" className="w-full px-4 py-3.5 border border-gray-200 rounded-xl text-sm bg-gray-50 focus:ring-2 focus:ring-green-600 outline-none transition-all" required placeholder="Enter 10-digit number" />
+                  <input name="mobileNumber" type="tel" className="w-full px-4 py-3.5 border border-gray-200 rounded-xl text-sm bg-gray-50 focus:ring-2 focus:ring-green-600 outline-none transition-all" required placeholder="Enter 10-digit number" />
                 </div>
                 <div className="space-y-2">
                   <label className="text-xs font-bold uppercase text-gray-400 ml-1">City / Area *</label>
-                  <input type="text" className="w-full px-4 py-3.5 border border-gray-200 rounded-xl text-sm bg-gray-50 focus:ring-2 focus:ring-green-600 outline-none transition-all" required placeholder="e.g. Faridabad Sector 15" />
+                  <input name="city" type="text" className="w-full px-4 py-3.5 border border-gray-200 rounded-xl text-sm bg-gray-50 focus:ring-2 focus:ring-green-600 outline-none transition-all" required placeholder="e.g. Faridabad Sector 15" />
                 </div>
                 <div className="space-y-2">
                   <label className="text-xs font-bold uppercase text-gray-400 ml-1">Preferred contact time</label>
-                  <select className="w-full px-4 py-3.5 border border-gray-200 rounded-xl text-sm bg-gray-50 focus:ring-2 focus:ring-green-600 outline-none transition-all">
+                  <select name="contactTime" className="w-full px-4 py-3.5 border border-gray-200 rounded-xl text-sm bg-gray-50 focus:ring-2 focus:ring-green-600 outline-none transition-all">
                     <option>Morning</option>
                     <option>Afternoon</option>
                     <option>Evening</option>
@@ -260,7 +287,13 @@ export default function Drivers() {
                 <div className="flex gap-6">
                   {['Yes', 'No'].map((option) => (
                     <label key={option} className="flex items-center gap-2 cursor-pointer group">
-                      <input type="radio" name="current_driver" className="w-4 h-4 text-green-600 border-gray-300 focus:ring-green-600" />
+                      <input
+                        type="radio"
+                        name="currentlyDrives"
+                        value={option}
+                        required
+                        className="w-4 h-4 text-green-600 border-gray-300 focus:ring-green-600"
+                      />
                       <span className="text-sm font-medium text-gray-700 group-hover:text-black">{option}</span>
                     </label>
                   ))}
@@ -269,7 +302,7 @@ export default function Drivers() {
 
               <div className="space-y-2">
                 <label className="text-xs font-bold uppercase text-gray-400 ml-1">Do you have a valid driving licence?</label>
-                <select className="w-full px-4 py-3.5 border border-gray-200 rounded-xl text-sm bg-gray-50 focus:ring-2 focus:ring-green-600 outline-none transition-all">
+                <select name="hasLicense" className="w-full px-4 py-3.5 border border-gray-200 rounded-xl text-sm bg-gray-50 focus:ring-2 focus:ring-green-600 outline-none transition-all">
                   <option>Yes</option>
                   <option>No</option>
                   <option>In Process</option>
@@ -278,7 +311,7 @@ export default function Drivers() {
 
               <div className="space-y-2">
                 <label className="text-xs font-bold uppercase text-gray-400 ml-1">What type of rickshaw do you currently drive?</label>
-                <select className="w-full px-4 py-3.5 border border-gray-200 rounded-xl text-sm bg-gray-50 focus:ring-2 focus:ring-green-600 outline-none transition-all">
+                <select name="rickshawType" className="w-full px-4 py-3.5 border border-gray-200 rounded-xl text-sm bg-gray-50 focus:ring-2 focus:ring-green-600 outline-none transition-all">
                   <option>Battery</option>
                   <option>Petrol</option>
                   <option>Cycle</option>

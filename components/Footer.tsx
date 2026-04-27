@@ -21,15 +21,25 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-3 group">
                 <Phone size={18} className="flex-shrink-0 text-green-600 group-hover:scale-110 transition-transform" />
-                <span>1800-1234-567</span>
+                <a href="tel:+919625731808" className="hover:text-green-600 transition-colors">
+                  +919625731808
+                </a>
               </li>
               <li className="flex items-center gap-3 group">
                 <Mail size={18} className="flex-shrink-0 text-green-600 group-hover:scale-110 transition-transform" />
-                <span>infot@bharatgreenvolt.com</span>
+                <a href="mailto:info@bharatgreenvolt.com" className="hover:text-green-600 transition-colors">
+                  info@bharatgreenvolt.com
+                </a>
               </li>
             </ul>
             <div className="flex gap-4 mt-8">
-              <a href="#" className="w-10 h-10 border border-gray-200 rounded-full flex items-center justify-center text-gray-600 hover:bg-green-600 hover:text-white hover:border-green-600 transition-all shadow-sm">
+              <a
+                href="https://www.linkedin.com/company/bharat-green-volt"
+                target="_blank"
+                rel="noreferrer noopener"
+                className="w-10 h-10 border border-gray-200 rounded-full flex items-center justify-center text-gray-600 hover:bg-green-600 hover:text-white hover:border-green-600 transition-all shadow-sm"
+                aria-label="Bharat Green Volt on LinkedIn"
+              >
                 <Linkedin size={18} />
               </a>
               <a href="#" className="w-10 h-10 border border-gray-200 rounded-full flex items-center justify-center text-gray-600 hover:bg-green-600 hover:text-white hover:border-green-600 transition-all shadow-sm">

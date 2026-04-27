@@ -1,6 +1,24 @@
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 import Image from 'next/image'
+import { Facebook, Linkedin } from 'lucide-react'
+
+const CORE_TEAM = [
+  {
+    name: 'Parul Langoo',
+    title: 'Founder',
+    image: '/images/Parul.jpg',
+    facebook: 'https://facebook.com/',
+    linkedin: 'https://www.linkedin.com/in/parul-langoo-66299614/',
+  },
+  {
+    name: 'Abhineet Handoo',
+    title: 'Co-Founder & CEO',
+    image: '/images/Abhineet.jpg',
+    facebook: 'https://facebook.com/',
+    linkedin: 'https://www.linkedin.com/in/abhineet-handoo-36195017/',
+  },
+] as const
 
 export default function About() {
   return (
@@ -118,34 +136,46 @@ export default function About() {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 max-w-6xl mx-auto">
-            {[
-              { 
-                name: "[Co-Founder Name 1]", 
-                title: "Co-Founder & CEO", 
-                bio: "Background in EV / business / operations. Passionate about financial inclusion and green mobility. Based in Faridabad.",
-                image: "/images/team-member-1.jpg"
-              },
-              { 
-                name: "[Co-Founder Name 2]", 
-                title: "Co-Founder & COO", 
-                bio: "Background in operations / technology / logistics. Leads assembly operations, dealer network, and customer experience.",
-                image: "/images/team-member-2.jpg"
-              },
-              { 
-                name: "Strategic Advisor", 
-                title: "Strategic Advisor", 
-                bio: "Former Sales Head, eChargeUp. Brings deep industry expertise in EV dealer networks and battery technology across North India.",
-                image: "/images/team-member-3.jpg"
-              }
-            ].map((member, i) => (
-              <div key={i} className="group">
-                <div className="relative h-80 w-full rounded-2xl overflow-hidden shadow-lg mb-6">
-                  <Image src={member.image} alt={member.name} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60" />
+            {CORE_TEAM.map((member) => (
+              <div
+                key={member.name}
+                className="rounded-3xl overflow-hidden border border-gray-100 bg-gray-50 shadow-sm hover:shadow-md transition-shadow"
+              >
+                <div className="relative h-80 w-full bg-white">
+                  <Image
+                    src={member.image}
+                    alt={member.name}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover"
+                  />
                 </div>
-                <h3 className="text-xl font-bold text-black mb-1 uppercase tracking-tight">{member.name}</h3>
-                <p className="text-green-600 font-bold text-xs mb-4 uppercase tracking-widest">{member.title}</p>
-                <p className="text-sm text-gray-600 leading-relaxed italic">{member.bio}</p>
+
+                <div className="bg-slate-50 px-6 pt-6 pb-7 text-center">
+                  <h3 className="text-xl font-bold text-black mb-1">{member.name}</h3>
+                  <p className="text-gray-600 text-sm mb-6">{member.title}</p>
+
+                  <div className="flex items-center justify-center gap-4 pt-5 border-t border-gray-200/70">
+                    <a
+                      href={member.facebook}
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      aria-label={`${member.name} on Facebook`}
+                      className="h-12 w-12 rounded-full border border-gray-200 bg-white grid place-items-center text-gray-600 hover:text-green-700 hover:border-green-200 hover:bg-green-50 transition-colors"
+                    >
+                      <Facebook className="h-5 w-5" />
+                    </a>
+                    <a
+                      href={member.linkedin}
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      aria-label={`${member.name} on LinkedIn`}
+                      className="h-12 w-12 rounded-full border border-gray-200 bg-white grid place-items-center text-gray-600 hover:text-green-700 hover:border-green-200 hover:bg-green-50 transition-colors"
+                    >
+                      <Linkedin className="h-5 w-5" />
+                    </a>
+                  </div>
+                </div>
               </div>
             ))}
           </div>

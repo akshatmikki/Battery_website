@@ -1,9 +1,38 @@
+'use client'
+
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 import Image from 'next/image'
 import Link from 'next/link'
+import { buildMailtoUrl } from '@/lib/mailto'
 
 export default function Dealers() {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    const form = e.currentTarget
+    const data = new FormData(form)
+
+    const url = buildMailtoUrl({
+      to: 'info@bharatgreenvolt.com',
+      subject: `Website Enquiry (Dealer Form) — ${(data.get('fullName') as string) || 'New dealer enquiry'}`,
+      fields: {
+        Page: 'Dealers',
+        'Full Name': data.get('fullName'),
+        'Business Name': data.get('businessName'),
+        'City / District': data.get('city'),
+        State: data.get('state'),
+        'Mobile Number': data.get('mobileNumber'),
+        'Email Address': data.get('emailAddress'),
+        'Current Business Type': data.get('businessType'),
+        'Starting Vehicles': data.get('vehiclesCount'),
+        Message: data.get('message'),
+      },
+    })
+
+    window.location.href = url
+    form.reset()
+  }
+
   return (
     <div className="bg-white">
       <Navigation />
@@ -167,37 +196,37 @@ export default function Dealers() {
           <div className="max-w-3xl mx-auto bg-white p-8 sm:p-12 rounded-3xl shadow-xl border border-gray-100">
             <h2 className="text-2xl sm:text-3xl font-bold text-black mb-8 text-center uppercase tracking-tight">Dealer Enquiry Form</h2>
             
-            <form className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label className="text-xs font-bold uppercase text-gray-400">Full Name *</label>
-                  <input type="text" className="w-full px-4 py-3 border border-gray-200 rounded-lg text-sm bg-gray-50 focus:ring-2 focus:ring-green-600 outline-none" required />
+                  <input name="fullName" type="text" className="w-full px-4 py-3 border border-gray-200 rounded-lg text-sm bg-gray-50 focus:ring-2 focus:ring-green-600 outline-none" required />
                 </div>
                 <div className="space-y-2">
                   <label className="text-xs font-bold uppercase text-gray-400">Business Name *</label>
-                  <input type="text" className="w-full px-4 py-3 border border-gray-200 rounded-lg text-sm bg-gray-50 focus:ring-2 focus:ring-green-600 outline-none" required />
+                  <input name="businessName" type="text" className="w-full px-4 py-3 border border-gray-200 rounded-lg text-sm bg-gray-50 focus:ring-2 focus:ring-green-600 outline-none" required />
                 </div>
                 <div className="space-y-2">
                   <label className="text-xs font-bold uppercase text-gray-400">City / District *</label>
-                  <input type="text" className="w-full px-4 py-3 border border-gray-200 rounded-lg text-sm bg-gray-50 focus:ring-2 focus:ring-green-600 outline-none" required />
+                  <input name="city" type="text" className="w-full px-4 py-3 border border-gray-200 rounded-lg text-sm bg-gray-50 focus:ring-2 focus:ring-green-600 outline-none" required />
                 </div>
                 <div className="space-y-2">
                   <label className="text-xs font-bold uppercase text-gray-400">State *</label>
-                  <input type="text" className="w-full px-4 py-3 border border-gray-200 rounded-lg text-sm bg-gray-50 focus:ring-2 focus:ring-green-600 outline-none" required />
+                  <input name="state" type="text" className="w-full px-4 py-3 border border-gray-200 rounded-lg text-sm bg-gray-50 focus:ring-2 focus:ring-green-600 outline-none" required />
                 </div>
                 <div className="space-y-2">
                   <label className="text-xs font-bold uppercase text-gray-400">Mobile Number *</label>
-                  <input type="tel" className="w-full px-4 py-3 border border-gray-200 rounded-lg text-sm bg-gray-50 focus:ring-2 focus:ring-green-600 outline-none" required />
+                  <input name="mobileNumber" type="tel" className="w-full px-4 py-3 border border-gray-200 rounded-lg text-sm bg-gray-50 focus:ring-2 focus:ring-green-600 outline-none" required />
                 </div>
                 <div className="space-y-2">
                   <label className="text-xs font-bold uppercase text-gray-400">Email Address *</label>
-                  <input type="email" className="w-full px-4 py-3 border border-gray-200 rounded-lg text-sm bg-gray-50 focus:ring-2 focus:ring-green-600 outline-none" required />
+                  <input name="emailAddress" type="email" className="w-full px-4 py-3 border border-gray-200 rounded-lg text-sm bg-gray-50 focus:ring-2 focus:ring-green-600 outline-none" required />
                 </div>
               </div>
               
               <div className="space-y-2">
                 <label className="text-xs font-bold uppercase text-gray-400">Current Business Type</label>
-                <select className="w-full px-4 py-3 border border-gray-200 rounded-lg text-sm bg-gray-50 focus:ring-2 focus:ring-green-600 outline-none">
+                <select name="businessType" className="w-full px-4 py-3 border border-gray-200 rounded-lg text-sm bg-gray-50 focus:ring-2 focus:ring-green-600 outline-none">
                   <option>New Dealer</option>
                   <option>Existing EV Dealer</option>
                   <option>Auto Parts Shop</option>
@@ -208,7 +237,7 @@ export default function Dealers() {
 
               <div className="space-y-2">
                 <label className="text-xs font-bold uppercase text-gray-400">How many vehicles are you looking to start with?</label>
-                <select className="w-full px-4 py-3 border border-gray-200 rounded-lg text-sm bg-gray-50 focus:ring-2 focus:ring-green-600 outline-none">
+                <select name="vehiclesCount" className="w-full px-4 py-3 border border-gray-200 rounded-lg text-sm bg-gray-50 focus:ring-2 focus:ring-green-600 outline-none">
                   <option>1–5</option>
                   <option>6–15</option>
                   <option>16–30</option>
@@ -218,7 +247,7 @@ export default function Dealers() {
 
               <div className="space-y-2">
                 <label className="text-xs font-bold uppercase text-gray-400">Message / Any specific queries</label>
-                <textarea rows={4} className="w-full px-4 py-3 border border-gray-200 rounded-lg text-sm bg-gray-50 focus:ring-2 focus:ring-green-600 outline-none"></textarea>
+                <textarea name="message" rows={4} className="w-full px-4 py-3 border border-gray-200 rounded-lg text-sm bg-gray-50 focus:ring-2 focus:ring-green-600 outline-none"></textarea>
               </div>
 
               <div className="space-y-4 pt-4">

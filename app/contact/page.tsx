@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 import { MapPin, Phone, Mail, Clock, Linkedin, Instagram, Youtube } from 'lucide-react'
+import { buildMailtoUrl } from '@/lib/mailto'
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -17,8 +18,21 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    console.log('Form submitted:', formData)
-    // Handle form submission logic here
+
+    const url = buildMailtoUrl({
+      to: 'info@bharatgreenvolt.com',
+      subject: `Website Enquiry (Contact Page) — ${formData.subject || 'New message'}`,
+      fields: {
+        'Full Name': formData.fullName,
+        'Mobile Number': formData.mobileNumber,
+        'Email Address': formData.emailAddress,
+        Category: formData.category,
+        Subject: formData.subject,
+        Message: formData.message,
+      },
+    })
+
+    window.location.href = url
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -74,7 +88,7 @@ export default function Contact() {
                         required
                         value={formData.mobileNumber}
                         onChange={handleChange}
-                        placeholder="+91 98765 43210"
+                        placeholder="+919625731808"
                         className="w-full px-4 py-3 bg-gray-50 border border-gray-200 text-gray-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500 transition-all"
                       />
                     </div>
@@ -168,8 +182,12 @@ export default function Contact() {
                     </div>
                     <div>
                       <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">Phone</p>
-                      <p className="text-sm sm:text-base text-gray-200">1800-1234-567</p>
-                      <p className="text-[10px] text-gray-500 mt-1 italic">(Toll Free | Mon–Sat, 9 AM to 7 PM)</p>
+                      <a
+                        href="tel:+919625731808"
+                        className="text-sm sm:text-base text-gray-200 hover:text-green-400 transition-colors"
+                      >
+                        +919625731808
+                      </a>
                     </div>
                   </div>
 
@@ -179,7 +197,12 @@ export default function Contact() {
                     </div>
                     <div>
                       <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">Email</p>
-                      <p className="text-sm sm:text-base text-gray-200">connect@bharatgreenvolt.com</p>
+                      <a
+                        href="mailto:info@bharatgreenvolt.com"
+                        className="text-sm sm:text-base text-gray-200 hover:text-green-400 transition-colors"
+                      >
+                        info@bharatgreenvolt.com
+                      </a>
                     </div>
                   </div>
 
@@ -197,7 +220,13 @@ export default function Contact() {
                 <div className="mt-12 pt-8 border-t border-white/10 relative z-10">
                   <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-6">Connect With Us</p>
                   <div className="flex gap-4">
-                    <a href="https://www.linkedin.com/company/bharat-green-volt/" className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-green-600 transition-all">
+                    <a
+                      href="https://www.linkedin.com/company/bharat-green-volt"
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      aria-label="Bharat Green Volt on LinkedIn"
+                      className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-green-600 transition-all"
+                    >
                       <Linkedin size={20} />
                     </a>
                     <a href="#" className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-green-600 transition-all">
@@ -213,7 +242,7 @@ export default function Contact() {
               {/* MAP */}
               <div className="rounded-3xl overflow-hidden shadow-xl border border-gray-100 h-[300px] sm:h-[350px] lg:h-[400px]">
                 <iframe
-                  src="https://www.google.com/maps?q=1013,+3rd+Floor,+Padla+Road,+New+Delhi+–+110030&output=embed"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3504.9750621908474!2d77.25471937430706!3d28.54046927571508!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce3d951c3d745%3A0x426961f0bd3d264!2s3rd%20Floor%2C%20R.S.%20International%2C%20H-9%2Fa%2C%20Main%20Rd%2C%20Krishna%20Market%2C%20Block%20H%2C%20Kalkaji%2C%20New%20Delhi%2C%20Delhi%20110019!5e0!3m2!1sen!2sin!4v1777272946600!5m2!1sen!2sin"
                   className="w-full h-full border-0 grayscale hover:grayscale-0 transition-all duration-700"
                   loading="lazy"
                 />
