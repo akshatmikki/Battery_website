@@ -13,7 +13,7 @@ const CORE_TEAM = [
   },
   {
     name: 'Abhineet Handoo',
-    title: 'Co-Founder & CEO',
+    title: 'Co-Founder',
     image: '/images/Abhineet.jpg',
     // facebook: 'https://facebook.com/',
     linkedin: 'https://www.linkedin.com/in/abhineet-handoo-36195017/',

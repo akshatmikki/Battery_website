@@ -172,7 +172,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">Address</p>
-                      <p className="text-sm sm:text-base text-gray-200">1013, 3rd Floor, Padla Road, New Delhi – 110030</p>
+                      <p className="text-sm sm:text-base text-gray-200">Sector 88, Faridabad, Haryana – 110030</p>
                     </div>
                   </div>
 
@@ -242,7 +242,7 @@ export default function Contact() {
               {/* MAP */}
               <div className="rounded-3xl overflow-hidden shadow-xl border border-gray-100 h-[300px] sm:h-[350px] lg:h-[400px]">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3504.9750621908474!2d77.25471937430706!3d28.54046927571508!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce3d951c3d745%3A0x426961f0bd3d264!2s3rd%20Floor%2C%20R.S.%20International%2C%20H-9%2Fa%2C%20Main%20Rd%2C%20Krishna%20Market%2C%20Block%20H%2C%20Kalkaji%2C%20New%20Delhi%2C%20Delhi%20110019!5e0!3m2!1sen!2sin!4v1777272946600!5m2!1sen!2sin"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14035.767907531957!2d77.34562698665867!3d28.4210076124897!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cdd17fc77f603%3A0x4e0096d589fa883d!2sRPS%20City%2C%20Sector%2088%2C%20Faridabad%2C%20Haryana!5e0!3m2!1sen!2sin!4v1777291150528!5m2!1sen!2sin"
                   className="w-full h-full border-0 grayscale hover:grayscale-0 transition-all duration-700"
                   loading="lazy"
                 />
