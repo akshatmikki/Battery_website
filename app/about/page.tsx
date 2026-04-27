@@ -8,14 +8,14 @@ const CORE_TEAM = [
     name: 'Parul Langoo',
     title: 'Founder',
     image: '/images/Parul.jpg',
-    facebook: 'https://facebook.com/',
+    // facebook: 'https://facebook.com/',
     linkedin: 'https://www.linkedin.com/in/parul-langoo-66299614/',
   },
   {
     name: 'Abhineet Handoo',
     title: 'Co-Founder & CEO',
     image: '/images/Abhineet.jpg',
-    facebook: 'https://facebook.com/',
+    // facebook: 'https://facebook.com/',
     linkedin: 'https://www.linkedin.com/in/abhineet-handoo-36195017/',
   },
 ] as const
@@ -156,7 +156,7 @@ export default function About() {
                   <p className="text-gray-600 text-sm mb-6">{member.title}</p>
 
                   <div className="flex items-center justify-center gap-4 pt-5 border-t border-gray-200/70">
-                    <a
+                    {/* <a
                       href={member.facebook}
                       target="_blank"
                       rel="noreferrer noopener"
@@ -164,7 +164,7 @@ export default function About() {
                       className="h-12 w-12 rounded-full border border-gray-200 bg-white grid place-items-center text-gray-600 hover:text-green-700 hover:border-green-200 hover:bg-green-50 transition-colors"
                     >
                       <Facebook className="h-5 w-5" />
-                    </a>
+                    </a> */}
                     <a
                       href={member.linkedin}
                       target="_blank"
